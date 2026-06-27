@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert a New Student</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../Student Management/CSS/update.css">
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <!-- Header -->
+
+        <div class="header-section">
+
+            <a href="API.html" class="text-decoration-none text-primary">
+                <i class="bi bi-arrow-left"></i> Go Back
+            </a>
+
+            <div>
+                <h1 class="page-title">
+                    Add Student Record
+                </h1>
+
+                <p class="page-subtitle">
+                    Enter student details to create a new record in the system.
+                </p>
+            </div>
+
+        </div>
+
+
+        <h3 class="section-title mt-5">
+            Student Details
+        </h3>
+
+        <form>
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Student ID</label>
+                    <input type="number" id="sid" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" id="firstname" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" id="lastname" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Date Of Birth (YY/MM/DD)</label>
+                    <input type="date" id="DateOfBirth" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Gender</label>
+                    <input type="text" id="gender" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Students Phone Number</label>
+                    <input type="tel" id="Phone" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Student's Email Address</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Current Address</label>
+                    <input type="text" id="address" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Nearest City</label>
+                    <input type="text" id="nearcity" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Enrollment Date(YY/MM/DD) </label>
+                    <input type="date" id="enrollmentdate" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Guardian Name</label>
+                    <input type="text" id="guardian" class="form-control">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Guardian's Contact Number</label>
+                    <input type="tel" id="guardianphone" class="form-control">
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label class="form-label">Course</label>
+
+                    <select id="course" class="form-select">
+                        <option>Foundation</option>
+                        <option>HND</option>
+                        <option>Masters Degree</option>
+                        <option>Top-Up Degree</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="mt-4">
+
+                <button type="button" class="btn btn-primary action-btn" onclick="insertStudent()">
+                    <i class="bi bi-check-circle"></i>
+                    Insert Student
+                </button>
+
+                <button type="reset" class="btn btn-outline-secondary action-btn">
+                    <i class="bi bi-arrow-clockwise"></i>
+                    Reset
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        function insertStudent() {
+            let sid = document.getElementById("sid").value.trim();
+            let firstname = document.getElementById("firstname").value.trim();
+            let lastname = document.getElementById("lastname").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("Phone").value.trim();
+            let dateofbirth = document.getElementById("DateOfBirth").value;
+            let gender = document.getElementById("gender").value.trim();
+            let address = document.getElementById("address").value.trim();
+            let nearcity = document.getElementById("nearcity").value.trim();
+            let enrollmentdate = document.getElementById("enrollmentdate").value;
+            let guardian = document.getElementById("guardian").value.trim();
+            let guardianphone = document.getElementById("guardianphone").value.trim();
+            let course = document.getElementById("course").value;
+
+            // Validate
+            if (!sid || !firstname || !lastname || !email || !phone || !dateofbirth || !gender || !address || !nearcity || !enrollmentdate || !guardian || !guardianphone || !course) {
+                alert("Please fill in all required fields");
+                return;
+            }
+
+            let newStudent = {
+                SID: Number(sid),
+                FirstName: firstname,
+                LastName: lastname,
+                Email: email,
+                Phone: phone,
+                DateOfBirth: dateofbirth,
+                Gender: gender,
+                Address: address,
+                NearCity: nearcity,
+                Course: course,
+                EnrollmentDate: enrollmentdate,
+                Guardian: guardian,
+                GuardianPhone: guardianphone
+            };
+
+            $.ajax({
+                url: `http://localhost:3000/students`,
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(newStudent),
+                success: function (res) {
+                    alert(`Student ${res.data.FirstName} ${res.data.LastName} inserted successfully!`);
+                    document.querySelector("form").reset();
+                },
+                error: function (xhr) {
+                    alert(xhr.responseJSON?.message || "Failed to insert student.");
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

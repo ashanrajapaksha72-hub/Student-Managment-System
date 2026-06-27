@@ -1,0 +1,62 @@
+[
+  {
+    "SID": 1001,
+    "FirstName": "Harry",
+    "LastName": "Styles",
+    "Email": "harry@gmail.com",
+    "Phone": "0711234567",
+    "DateOfBirth": "1999-02-01",
+    "Gender": "Male",
+    "Address": "12, Peradeniya Road, Kandy",
+    "NearCity": "Kandy",
+    "Course": "Masters Degree",
+    "EnrollmentDate": "2023-01-10",
+    "Guardian": "James Cameron",
+    "GuardianPhone": "0771234567"
+  },
+  {
+    "SID": 1003,
+    "FirstName": "John",
+    "LastName": "Silva",
+    "Email": "john@gmail.com",
+    "Phone": "0722345678",
+    "DateOfBirth": "2001-05-15",
+    "Gender": "Male",
+    "Address": "45, Galle Road, Galle",
+    "NearCity": "Galle",
+    "Course": "Foundation",
+    "EnrollmentDate": "2024-03-01",
+    "Guardian": "Mary Silva",
+    "GuardianPhone": "0772345678"
+  },
+  {
+    "SID": 1004,
+    "FirstName": "Sarah",
+    "LastName": "Fernando",
+    "Email": "sarah@gmail.com",
+    "Phone": "0733456789",
+    "DateOfBirth": "2000-08-20",
+    "Gender": "Female",
+    "Address": "78, Katugastota Road, Kandy",
+    "NearCity": "Kandy",
+    "Course": "Master Degree",
+    "EnrollmentDate": "2023-06-15",
+    "Guardian": "Tom Fernando",
+    "GuardianPhone": "0773456789"
+  },
+  {
+    "SID": 1005,
+    "FirstName": "David",
+    "LastName": "Perera",
+    "Email": "david@gmail.com",
+    "Phone": "0744567890",
+    "DateOfBirth": "2002-11-10",
+    "Gender": "Male",
+    "Address": "23, Colombo Street, Kandy",
+    "NearCity": "Kandy",
+    "Course": "HND",
+    "EnrollmentDate": "2024-01-05",
+    "Guardian": "Susan Perera",
+    "GuardianPhone": "0774567890"
+  }
+]

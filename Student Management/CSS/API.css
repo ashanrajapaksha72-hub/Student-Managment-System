@@ -1,0 +1,105 @@
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.75),
+            rgba(30, 58, 138, 0.75)),
+        url("../Images/lib2.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.custom-navbar{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 15px 0;
+}
+
+.logo-box{
+    width: 45px;
+    height: 45px;
+    background: #2563eb;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+}
+
+.navbar-brand h5{
+    color: white;
+}
+
+.navbar-brand small{
+    color: #dbeafe;
+}
+
+.nav-link{
+    color: white ;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #60a5fa ;
+}
+
+.cu{
+    margin-top: 80px;
+}
+
+
+.service-card {
+    color: whitesmoke;
+    background: rgba(37, 99, 235, 0.12);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 20px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+    transition: .3s;
+}
+
+.service-card:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(96,165,250,0.6);
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    background: #EAF2FF;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+.delete-icon {
+    background: #ffeaea;
+    color: #ef4444;
+}
+
+
+.shield-icon {
+    width: 70px;
+    height: 70px;
+    background: #eef4ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2563eb;
+    font-size: 28px;
+}
