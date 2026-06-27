@@ -1,0 +1,4 @@
+# Force GitHub to count these files
+*.js linguist-detectable=true
+*.js linguist-vendored=false
+server/server.js linguist-detectable=true
